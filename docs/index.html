@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ThinkDB — AI Database IDE by Narula Cloud & AI Consulting</title>
+  <meta name="description" content="ThinkDB is an AI-powered Database IDE that helps teams ask questions in plain English, generate safe schema-aware SQL, validate guardrails, and explore results faster." />
+  <meta name="theme-color" content="#020617" />
+  <meta property="og:title" content="ThinkDB — AI Database IDE" />
+  <meta property="og:description" content="Natural language to safe, schema-aware SQL for enterprise data teams." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop stop-color='%2338BDF8'/%3E%3Cstop offset='1' stop-color='%232563EB'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%23020617'/%3E%3Cpath d='M16 20l16-9 16 9v19L32 53 16 39V20z' fill='none' stroke='url(%23g)' stroke-width='4'/%3E%3Cpath d='M22 24h20M22 32h20M22 40h20' stroke='%2306B6D4' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="grid-overlay"></div>
+
+    <header class="nav-wrap" id="top">
+      <nav class="navbar" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="ThinkDB home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48" role="img">
+              <defs>
+                <linearGradient id="logoGradient" x1="4" y1="4" x2="44" y2="44">
+                  <stop stop-color="#38BDF8" />
+                  <stop offset="1" stop-color="#2563EB" />
+                </linearGradient>
+              </defs>
+              <path d="M8 14.5 24 6l16 8.5v19L24 43 8 33.5v-19Z" fill="rgba(37,99,235,.14)" stroke="url(#logoGradient)" stroke-width="2.8" />
+              <path d="M15 18.5h18M15 24h18M15 29.5h18" stroke="#67E8F9" stroke-width="2.8" stroke-linecap="round" />
+            </svg>
+          </span>
+          <span>
+            <strong>Think<span>DB</span></strong>
+            <small>AI Database IDE</small>
+          </span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <div class="nav-links">
+          <a href="#product">Product</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#security">Guardrails</a>
+          <a href="#consulting">Company</a>
+          <a href="#contact">Contact</a>
+          <a class="nav-cta" href="mailto:samarthnarula253@gmail.com?subject=ThinkDB%20Demo%20Request&body=Hi%20Samarth%2C%0A%0AI%20would%20like%20to%20see%20a%20ThinkDB%20demo%20for%20my%20company.%0A%0ACompany%3A%0AUse%20case%3A%0APreferred%20time%3A">Request Demo</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-pad">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span></span> Owned by Narula Cloud &amp; AI Consulting</div>
+          <h1>Ask your database anything. ThinkDB turns it into safe SQL.</h1>
+          <p class="hero-subtitle">ThinkDB is an AI-powered Database IDE for companies that want faster analytics, safer SQL generation, and schema-aware data exploration without slowing down engineering teams.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="mailto:samarthnarula253@gmail.com?subject=ThinkDB%20Demo%20Request&body=Hi%20Samarth%2C%0A%0AI%20would%20like%20to%20see%20a%20ThinkDB%20demo.%0A%0ACompany%3A%0AUse%20case%3A%0A">Request a Company Demo</a>
+            <a class="btn secondary" href="#product">Explore Product</a>
+          </div>
+          <div class="hero-proof" aria-label="ThinkDB capabilities">
+            <span>Natural language to SQL</span>
+            <span>Read-only guardrails</span>
+            <span>Schema-aware analytics</span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1" aria-label="ThinkDB product mockup">
+          <div class="product-frame">
+            <div class="frame-topbar">
+              <div><span></span><span></span><span></span></div>
+              <p>Workspace: Revenue Analytics</p>
+              <strong>Read-only safe</strong>
+            </div>
+            <div class="mock-grid">
+              <aside class="mock-sidebar">
+                <small>Connections</small>
+                <p class="active">PostgreSQL</p>
+                <p>BigQuery</p>
+                <p>MySQL</p>
+                <small>Recent</small>
+                <p>Revenue by region</p>
+                <p>Customer cohorts</p>
+              </aside>
+              <div class="mock-main">
+                <div class="question-card">
+                  <small>Ask ThinkDB</small>
+                  <p>What is the total revenue by region for the last quarter?</p>
+                </div>
+                <div class="sql-card">
+                  <div><span>SQL</span><em>validated</em></div>
+<pre>SELECT r.region_name,
+       SUM(o.amount) AS total_revenue
+FROM sales.orders o
+JOIN sales.regions r ON o.region_id = r.id
+GROUP BY r.region_name
+ORDER BY total_revenue DESC;</pre>
+                </div>
+                <div class="result-card">
+                  <div class="result-head"><strong>Results</strong><span>128 ms · 4 rows</span></div>
+                  <div class="table-row header"><span>Region</span><span>Revenue</span><span>Orders</span></div>
+                  <div class="table-row"><span>North America</span><span>$245.3k</span><span>1,240</span></div>
+                  <div class="table-row"><span>Europe</span><span>$198.9k</span><span>980</span></div>
+                  <div class="table-row"><span>APAC</span><span>$176.4k</span><span>875</span></div>
+                </div>
+              </div>
+              <aside class="mock-schema">
+                <small>Schema Explorer</small>
+                <div class="schema-box">sales.orders</div>
+                <div class="schema-box">sales.regions</div>
+                <div class="schema-box">sales.customers</div>
+                <div class="schema-line"></div>
+                <p>Suggested: Compare revenue by product category</p>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="logo-bar reveal" aria-label="Company ownership">
+        <span>Product owned by</span>
+        <a href="https://www.linkedin.com/company/narula-cloud-ai-consulting/?viewAsMember=true" target="_blank" rel="noopener">
+          <img src="./assets/narula-logo-transparent.png" alt="Narula Cloud & AI Consulting logo" />
+        </a>
+      </section>
+
+      <section class="section section-pad split" id="product">
+        <div class="section-copy reveal">
+          <p class="section-kicker">Why companies should care</p>
+          <h2>Give your teams a safe AI analyst for operational data.</h2>
+          <p>Most companies have valuable data trapped behind complex schemas, overloaded data teams, and risky ad-hoc SQL. ThinkDB helps business, product, and engineering teams explore data faster while keeping validation and read-only controls visible.</p>
+        </div>
+        <div class="pain-grid reveal delay-1">
+          <article>
+            <span>01</span>
+            <h3>Faster decisions</h3>
+            <p>Turn plain-English business questions into SQL and results in one guided workflow.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Safer AI adoption</h3>
+            <p>Generated SQL is validated before execution with guardrails for read-only analytics.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Less schema friction</h3>
+            <p>Explore tables, columns, and relationships while asking follow-up questions naturally.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad feature-section">
+        <div class="center-copy reveal">
+          <p class="section-kicker">Product capabilities</p>
+          <h2>Designed like an IDE, powered like an AI teammate.</h2>
+          <p>ThinkDB is not just a chatbot. It combines a database workspace, SQL editor, schema context, result explorer, and safety checks into one enterprise-ready experience.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <div class="icon">⌁</div>
+            <h3>Natural language to SQL</h3>
+            <p>Ask questions in plain English and generate realistic SQL based on the selected database schema.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <div class="icon">▦</div>
+            <h3>Schema-aware generation</h3>
+            <p>Use discovered tables, columns, and relationships to produce more accurate, grounded queries.</p>
+          </article>
+          <article class="feature-card reveal delay-2">
+            <div class="icon">✓</div>
+            <h3>Read-only guardrails</h3>
+            <p>Block unsafe operations like INSERT, UPDATE, DELETE, DROP, ALTER, and TRUNCATE before execution.</p>
+          </article>
+          <article class="feature-card reveal">
+            <div class="icon">↯</div>
+            <h3>Dynamic connections</h3>
+            <p>Connect to a database, discover schema context, and run the workflow against the selected connection.</p>
+          </article>
+          <article class="feature-card reveal delay-1">
+            <div class="icon">◫</div>
+            <h3>Result explorer</h3>
+            <p>Inspect output tables, row counts, execution time, and suggested next questions in one clean view.</p>
+          </article>
+          <article class="feature-card reveal delay-2">
+            <div class="icon">◇</div>
+            <h3>MCP-ready roadmap</h3>
+            <p>Built with a future integration layer for AI agents, enterprise tools, and developer workflows.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-pad workflow-section" id="workflow">
+        <div class="center-copy reveal">
+          <p class="section-kicker">Workflow</p>
+          <h2>From question to insight in seconds.</h2>
+        </div>
+        <div class="workflow">
+          <div class="step reveal"><span>1</span><h3>Connect</h3><p>Add a database connection for your analytics workspace.</p></div>
+          <div class="step reveal delay-1"><span>2</span><h3>Discover</h3><p>ThinkDB reads schema context and available metadata.</p></div>
+          <div class="step reveal delay-2"><span>3</span><h3>Ask</h3><p>Use plain English to describe the business question.</p></div>
+          <div class="step reveal"><span>4</span><h3>Validate</h3><p>Generated SQL is checked for safety and read-only behavior.</p></div>
+          <div class="step reveal delay-1"><span>5</span><h3>Run</h3><p>Execute approved queries and view structured results.</p></div>
+          <div class="step reveal delay-2"><span>6</span><h3>Iterate</h3><p>Ask follow-ups and move from raw data to useful insight.</p></div>
+        </div>
+      </section>
+
+      <section class="section-pad demo-section">
+        <div class="demo-card reveal">
+          <div class="demo-copy">
+            <p class="section-kicker">Demo-ready use cases</p>
+            <h2>Useful for teams that need answers now — without bypassing governance.</h2>
+            <ul class="check-list">
+              <li>Revenue, customer, product, and operations analytics</li>
+              <li>Internal AI analyst pilots for engineering and data teams</li>
+              <li>Schema exploration during cloud/data modernization</li>
+              <li>Faster debugging of reporting and dashboard logic</li>
+              <li>Governed natural-language query experiences for enterprise teams</li>
+            </ul>
+          </div>
+          <div class="code-window">
+            <div class="code-head"><span></span><span></span><span></span><strong>guardrails.yaml</strong></div>
+<pre>mode: read_only
+blocked_keywords:
+  - INSERT
+  - UPDATE
+  - DELETE
+  - DROP
+  - ALTER
+controls:
+  row_limit: enabled
+  timeout: enabled
+  schema_allowlist: enabled
+status: enterprise_ready</pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad security" id="security">
+        <div class="section-copy reveal">
+          <p class="section-kicker">Safety-first architecture</p>
+          <h2>Built for companies that cannot afford uncontrolled AI queries.</h2>
+          <p>ThinkDB keeps the generated SQL visible, validates risky keywords, applies read-only discipline, and makes the execution path auditable. Your teams move faster without turning the database into an experiment.</p>
+        </div>
+        <div class="security-grid reveal delay-1">
+          <div>Read-only SQL enforcement</div>
+          <div>Blocked destructive commands</div>
+          <div>Schema allowlisting</div>
+          <div>Query timeout controls</div>
+          <div>Row limit protection</div>
+          <div>Execution visibility</div>
+        </div>
+      </section>
+
+      <section class="section-pad architecture">
+        <div class="center-copy reveal">
+          <p class="section-kicker">Architecture</p>
+          <h2>Enterprise-style foundation for AI-native data exploration.</h2>
+        </div>
+        <div class="arch-map reveal delay-1" aria-label="ThinkDB architecture diagram">
+          <div class="arch-node">Static Website<br><span>GitHub Pages</span></div>
+          <div class="arch-arrow"></div>
+          <div class="arch-node highlight">ThinkDB UI<br><span>React workspace</span></div>
+          <div class="arch-arrow"></div>
+          <div class="arch-node">Spring Boot API<br><span>Orchestration layer</span></div>
+          <div class="arch-arrow"></div>
+          <div class="arch-node">AI + Guardrails<br><span>SQL generation & validation</span></div>
+          <div class="arch-arrow"></div>
+          <div class="arch-node">Database<br><span>PostgreSQL / future engines</span></div>
+        </div>
+      </section>
+
+      <section class="section-pad consulting" id="consulting">
+        <div class="founder-card reveal">
+          <div class="founder-photo-wrap">
+            <img src="./assets/samarth-narula-founder.jpg" alt="Samarth Narula, Founder of Narula Cloud & AI Consulting" />
+          </div>
+          <div class="founder-copy">
+            <p class="section-kicker">Built and owned by Narula Cloud &amp; AI Consulting</p>
+            <h2>Product-led consulting for Cloud, DevOps, Platform Engineering, Data, and AI.</h2>
+            <p>ThinkDB is owned by <strong>Narula Cloud &amp; AI Consulting</strong>, founded by <strong>Samarth Narula</strong>. The company helps teams design scalable cloud platforms, automate DevOps workflows, modernize data engineering systems, and build AI-powered engineering products.</p>
+            <div class="founder-meta">
+              <span>Founder &amp; Independent Consultant</span>
+              <span>DevOps · Cloud · Platform Engineering · AI Product Consulting</span>
+            </div>
+            <a class="btn secondary" href="https://www.linkedin.com/company/narula-cloud-ai-consulting/?viewAsMember=true" target="_blank" rel="noopener">View Company Page</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-pad faq">
+        <div class="center-copy reveal">
+          <p class="section-kicker">FAQ</p>
+          <h2>Questions companies usually ask.</h2>
+        </div>
+        <div class="faq-list reveal delay-1">
+          <details open>
+            <summary>What is ThinkDB?</summary>
+            <p>ThinkDB is an AI-powered Database IDE that helps users ask questions in plain English, generate safe schema-aware SQL, validate queries, and explore results.</p>
+          </details>
+          <details>
+            <summary>Is ThinkDB only a chatbot?</summary>
+            <p>No. ThinkDB is designed as a database workspace with schema explorer, SQL editor, result table, validation status, query history, and follow-up suggestions.</p>
+          </details>
+          <details>
+            <summary>Can companies request a private demo?</summary>
+            <p>Yes. Companies can contact Samarth Narula directly to see a walkthrough and discuss a pilot use case.</p>
+          </details>
+          <details>
+            <summary>Does ThinkDB execute unsafe SQL?</summary>
+            <p>The product is designed around read-only execution and validation controls that block destructive SQL operations before execution.</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section-pad contact-section" id="contact">
+        <div class="contact-card reveal">
+          <div>
+            <p class="section-kicker">Request a demo</p>
+            <h2>Want to evaluate ThinkDB for your company?</h2>
+            <p>Reach out with your use case, database type, and the team you want to enable. I can walk you through the product vision, architecture, demo flow, and pilot possibilities.</p>
+          </div>
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:samarthnarula253@gmail.com?subject=ThinkDB%20Demo%20Request&body=Hi%20Samarth%2C%0A%0AI%20would%20like%20to%20evaluate%20ThinkDB%20for%20our%20company.%0A%0ACompany%3A%0ADatabase%20type%3A%0AUse%20case%3A%0APreferred%20demo%20time%3A">Email Samarth</a>
+            <a class="btn secondary" href="https://wa.me/919930864102?text=Hi%20Samarth%2C%20I%20would%20like%20to%20see%20a%20ThinkDB%20demo." target="_blank" rel="noopener">WhatsApp India</a>
+            <a class="btn secondary" href="https://wa.me/17272255610?text=Hi%20Samarth%2C%20I%20would%20like%20to%20see%20a%20ThinkDB%20demo." target="_blank" rel="noopener">WhatsApp US</a>
+          </div>
+          <div class="contact-grid">
+            <a href="mailto:samarthnarula253@gmail.com">samarthnarula253@gmail.com</a>
+            <a href="https://www.linkedin.com/in/samarth-narula/" target="_blank" rel="noopener">LinkedIn: Samarth Narula</a>
+            <span>WhatsApp: +91 9930864102 / +1 7272255610</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>ThinkDB</strong>
+        <p>AI Database IDE owned by Narula Cloud &amp; AI Consulting.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#product">Product</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#security">Security</a>
+        <a href="#contact">Demo</a>
+      </div>
+    </footer>
+  </div>
+  <script src="./script.js"></script>
+</body>
+</html>
